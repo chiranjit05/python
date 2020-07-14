@@ -1,0 +1,48 @@
+http://localhost:8967/notebooks/Desktop/couirsera/coursera%20python%20course%201%20week%201.ipynb
+
+1 )
+
+def square(n):
+    print("The loop has been entered")
+    ans = n**2
+    return ans
+
+
+
+a=int(input("Enter the value : "))
+b=square(a)
+print("function has been exited.")
+print("The square of the number : ",b)
+
+output :
+
+Enter the value : 5
+The loop has been entered
+function has been exited.
+The square of the number :  25
+
+2)
+
+a=50
+b=5
+c=a+b
+print("the addition is : " + str(c))
+print("another method is......")
+print("addition is : ",c)
+
+
+output :
+the addition is : 55
+another method is......
+addition is :  55
+
+
+a=input("Enter the value of a : ")
+b=input("Enter the value of b : ")
+c=int(a)
+print("value of c i s: ",c)
+
+output : 
+Enter the value of a : 12
+Enter the value of b : 45
+value of c i s:  12
