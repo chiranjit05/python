@@ -1,0 +1,123 @@
+# link : http://localhost:8933/notebooks/Desktop/couirsera/coursera%20python%20course%201%20week%204.1%20(Mutation).ipynb
+
+
+fruits = ("apple","mango","pear")  # tuples
+print(fruits)
+fruits[0] = "orange"  # ERROR
+print(fruits)
+
+fruits = ["apple","mango","pear"]  # list
+print("original list : ",fruits)
+fruits[0] = "orange"  
+print("After editing : ")
+print(fruits)
+
+#Easiest way to delete elements in list :
+
+l = ['a','b','c','d','e','f','g','h']
+l[3:-1] = []
+print("after deleting items : ",l)
+
+# error code : the following code doesnt work as "string is IMMUTABLE"
+words = ["adopt", "bake", "beam", "confide", "grill", "plant", "time", "wave", "wish"]
+
+word = words
+
+for i in word :
+    if (i[-1] == "e"):
+        
+        i = i + "d"
+        print(i)
+    else :
+        i = i + "ed"
+        print(i)
+
+print(word)
+
+greeting = "Hello, world!"
+greeting[0] = 'J'            # ERROR!
+print(greeting)
+
+# We can even insert elements into a list by squeezing them into an empty slice at the desired location.
+
+alist = ['a', 'd', 'f']
+alist[1:1] = ['b', 'c']
+print(alist)
+alist[4:4] = ['e']
+print(alist)
+
+
+a = "ball"
+a[0] = "c"
+print(a)
+
+# deletion of items from list :
+
+a = ['one', 'two', 'three']
+del a[1]
+print(a)
+
+alist = ['a', 'b', 'c', 'd', 'e', 'f']
+del alist[1:5]
+print(alist)
+
+
+a = "mango"
+b = "mango"
+c = a
+d = a
+e = b
+
+print( a is b )
+print( a is c )
+print( c is d )
+print( c is e )
+print( b is e )
+print(id(a))
+print(id(b))
+
+print("----------------------------------")
+
+a = [81,82,83]
+b = [81,82,83]
+c = a
+d = a
+e = b
+
+print( a is b )
+print( a is c )
+print( c is d )
+print( c is e )
+print( b is e )
+print(id(a))
+print(id(b))
+
+# NOTE : Since the id of a and b are different the objects referred are diferent. the value of a and b are equivalent
+
+# Another example : 
+
+a = [81,82,83]
+b = [81,82,83]
+print(a is b)
+
+b = a
+print(a == b)
+print(a is b)
+
+b[0] = 5
+print(a)
+
+
+# CLONING LIST : alliases vs equivalent 
+
+
+a = [81,82,83]
+b = [81,82,83]
+print(a is b)
+
+b = a
+print(a == b)
+print(a is b)
+
+b[0] = 5
+print(a)
