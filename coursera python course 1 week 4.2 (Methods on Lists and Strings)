@@ -1,0 +1,245 @@
+# jupyter notebook link : http://localhost:8888/notebooks/Desktop/couirsera/coursera%20python%20course%201%20week%204.2%20(Methods%20on%20Lists%20and%20Strings).ipynb
+
+
+# different methods of list : 
+
+mylist = []
+mylist.append(5)
+mylist.append(27)
+mylist.append(3)
+mylist.append(12)
+print(mylist)
+
+mylist.insert(1, 12)
+print(mylist)
+print(mylist.count(12))
+
+print(mylist.index(3))
+print(mylist.count(5))
+
+mylist.reverse()
+print(mylist)
+
+mylist.sort()
+print(mylist)
+
+mylist.remove(5)
+print(mylist)
+
+lastitem = mylist.pop()
+print(lastitem)
+print(mylist)
+
+
+a=[34,54,12,45,76,90,56]
+print(a)
+b = a.sort()  
+a.sort()
+print("a is : ",a)
+print("b is : ",b)  # a.sort() Actually sorts A instead of creating a new sorted list in B
+
+
+# a.sort() Actually sorts A instead of creating a new sorted list in B
+# PROBLEM : 
+mylist = []
+mylist.append(5)
+mylist.append(27)
+mylist.append(3)
+mylist.append(12)
+print(mylist)
+
+mylist = mylist.sort()   #probably an error
+print(mylist)
+
+
+
+#SOLUTION : 
+
+mylist = []
+mylist.append(5)
+mylist.append(27)
+mylist.append(3)
+mylist.append(12)
+print(mylist)
+
+mylist = sorted(mylist)   # help from discord
+print(mylist)
+
+
+a = [1,2,3,4,5,"cat"]
+print(id(a))
+print(a)
+a += ["dog"]
+print(id(a))
+print(a)
+a = a[0:-3]
+print(a)
+a.append("dog")
+print(a)
+
+a = [1,2,3,4,5,6]
+b = a # v and a are aliases
+print("a : ",a)
+print("b : ",b)
+a = a + [7]    # new list is created
+print("a : ",a)
+print("b : ",b)
+
+print("+= and = --- + ---- are different...refer notebook notes")
+
+c = [1,2,3,4,5,6]
+d = c # v and a are aliases
+print("c : ",c)
+print("d : ",d)  
+c += [7]    # the same list is maintained
+print("c : ",c)
+print("d : ",d)
+
+a = [1,2,3,4,5,6]
+a = a + [7] #new list
+a += [7] #org list
+
+
+
+
+alist = [4,2,8,6,5]
+alist = alist + 999
+print(alist)
+
+# cannot add an integer to a list
+
+#correct method is
+alist = alist + [999]
+
+# IMMUTABE STRING FUCNTIONS :
+
+ss = "Hello, World"
+print(ss.upper())
+
+tt = ss.lower()
+print(tt)
+print(ss)
+
+ss = "    Hello, World    "
+
+els = ss.count("l")
+print(els)
+
+print("***"+ss.strip()+"***")
+
+news = ss.replace("o", "***")
+print(news)
+
+food = "banana bread"
+print(food.upper())
+
+name = "Rodney Dangerfield"
+score = -1  # No respect!
+print("Hello " + name + ". Your score is " + str(score))
+
+
+
+#PERFECT CODING : 
+ #STRING FORMAT METHOD
+scores = [("Rodney Dangerfield", -1), ("Marlon Brando", 1), ("You", 100)]
+for person in scores:
+    name = person[0]
+    score = person[1]
+    print("Hello " + name + ". Your score is " + str(score))
+
+
+# .format()
+ #STRING FORMAT METHOD
+
+scores = [("Rodney Dangerfield", -1), ("Marlon Brando", 1), ("You", 100)]
+for person in scores:
+    name = person[0]
+    score = person[1]
+    print("Hello {}. Your score is {}.".format(name, score))
+
+
+origPrice = float(input('Enter the original price: $'))
+discount = float(input('Enter discount percentage: '))
+newPrice = (1 - discount/100)*origPrice
+calculation = '${} discounted by {}% is ${}.'.format(origPrice, discount, newPrice)
+print(calculation)
+
+
+x = 2
+y = 6
+print('sum of {} and {} is {}; product: {}.'.format( x, y, x+y, x*y))
+
+
+
+print("-------------------------")
+
+v = 2.34567
+print('{:.1f} {:.2f} {:.7f}'.format(v, v, v))
+
+winners = ['Alice Munro', 'Alvin E. Roth', 'Kazuo Ishiguro', 'Malala Yousafzai', 'Rainer Weiss', 'Youyou Tu']
+
+winners.sort()
+#win = winners
+z_winners = winners.reverse()
+print(z_winners)
+
+print("-----------------------------------------------------------------")
+
+# can be solved even without a variable : 
+winners = ['Alice Munro', 'Alvin E. Roth', 'Kazuo Ishiguro', 'Malala Yousafzai', 'Rainer Weiss', 'Youyou Tu']
+
+winners.sort()
+winners.reverse()
+print(winners)
+
+
+
+ # The assignment of this section is very easy..so i am not posting allm solutions
+
+verbs = ["kayak", "cry", "walk", "eat", "drink", "fly"]
+
+v = []
+
+for i in verbs :
+    i += "ing"
+    v.append(i)
+   
+print(v)
+
+numbs = [5, 10, 15, 20, 25]
+for i in numbs :
+    i = i + 5
+print(numbs)
+
+numbs = [5, 10, 15, 20, 25]
+for i in range(len(numbs)) :
+    numbs[i] = numbs[i] + 5
+print(numbs)
+
+s = "ball"
+r = ""
+for item in s:
+    print(item)
+    r = item.upper() + r
+    print(r)
+print(r)
+
+numbs = [5, 10, 15, 20, 25]
+for x, y in enumerate(numbs):
+    print(x, y)
+    
+# Yep. For an example in a real-world use case, I have a function that contains 2 variables -- a reference to a PDF file 
+# and a list of strings, with each string being the text on that page in the PDF file. I use enumerate here
+# so I can both get the text of the page, and use another function to pull that specific page from the PDF file (for copying).
+
+
+
+ael = "python"
+app = []
+for w in ael:
+    app.append(w)
+    print(app)
+print(app)
+
+
+
