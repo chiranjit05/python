@@ -1,0 +1,65 @@
+page link : http://localhost:8888/notebooks/Desktop/couirsera/final_assignemnt_course%201.ipynb
+
+
+scores = "67 80 90 78 93 20 79 89 96 97 92 88 79 68 58 90 98 100 79 74 83 88 80 86 85 70 90 100"
+s=scores.split()
+a_scores=0
+print(s)
+for i in s:
+    if(int(i) >= 90):
+        a_scores += 1
+print(a_scores)
+
+stopwords = ['to', 'a', 'for', 'by', 'an', 'am', 'the', 'so', 'it', 'and', 'The']
+sent = "The water earth and air are vital"
+m = sent.split()
+n=[]
+#print(m)
+for i in m:
+    if(i not in stopwords):
+        n.append(i[0].upper())
+        n.append(i[1].upper())
+        n.append(". ")
+n = n[0:-1]
+print(n)
+print("----------------------------------------------------------------------------")
+acro= "".join(n)
+print(acro)
+    
+
+p_phrase="was it a car or a cat I saw"
+org_list = []
+for i in range(len(p_phrase)):
+    org_list.append(p_phrase[i])
+print("org_list : ",org_list)
+rev_org_list = []
+for i in range(len(org_list)-1,-1,-1):
+    rev_org_list.append(org_list[i])
+
+print("rev_org_list : ",rev_org_list)
+r_phrase= "".join(rev_org_list)
+print("rev_string : ",r_phrase)
+print(r_phrase == p_phrase)
+
+stopwords = ['to', 'a', 'for', 'by', 'an', 'am', 'the', 'so', 'it', 'and', "The"]
+org = "The organization for health, safety, and education"
+m = org.split()
+n=[]
+#print(m)
+for i in m:
+    if(i not in stopwords):
+        n.append(i[0].upper())
+print(n)
+print("----------------------------------------------------------------------------")
+acro= "".join(n)
+print(acro)
+
+    
+
+
+inventory = ["shoes, 12, 29.99", "shirts, 20, 9.99", "sweatpants, 25, 15.00", "scarves, 13, 7.75"]
+for temp in inventory:
+    temp = temp.split(',')
+    str1="The store has{} {}, each for{} USD."
+    str1=str1.format(temp[1],temp[0],temp[2])
+    print(str1)
